@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tic-Tac-Toe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #6A5ACD, #8A2BE2, #DA70D6, #9370DB);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .welcome-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent for contrast */
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+            animation: slideIn 2s ease-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+            animation: slideIn 2s ease-out;
+        }
+
+        .start-btn {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #8A2BE2; /* Main button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: bounce 2s infinite;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-btn:hover {
+            background-color: #7B68EE; /* Lighter violet on hover */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to Tic-Tac-Toe!</h1>
+        <p><b>Are you ready to challenge yourself? Click start to begin the game!</b></p>
+        <form action="TicTacToeServlet" method="get">
+            <button type="submit" class="start-btn">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>
